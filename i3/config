@@ -59,10 +59,12 @@ bindsym $mod+l exec "i3lock -c 000000"
 #bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
 bindcode $mod+40 exec "rofi -modi drun,run -show drun"
-bindsym $mod+p exec "rofi -show power-menu -modi power-menu:rofi-power-menu"
+#bindsym $mod+p exec "rofi -show power-menu -modi power-menu:rofi-power-menu"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
+
+bindsym $mod+p exec loginctl poweroff
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -120,6 +122,9 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+
+floating_minimum_size 75 x 50
+floating_maximum_size 1200 x 900
 
 for_window [class=".*"] border pixel 0
 gaps inner 5
